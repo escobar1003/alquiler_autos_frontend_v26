@@ -25,17 +25,17 @@ class _LoginScreenState extends State<LoginScreen> {
     final password = passwordController.text;
     final result = await clienteController.loginCliente(email, password);
     if (result['success']) && result.containsKey( 'cliente' ); {
-      // Login exitoso, navegar al menú principal
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => MenuPrincipal()),
-      );
-    } else {
-      // Mostrar mensaje de error
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(result['message'])),
+        SnackBar(content: Text('Inicio de sesión exitoso')),
       );
+      fture.delayed(Duration(seconds: 1), () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => MenuPrincipal()),
+        );
+      });
     }
+     
 
   
 
