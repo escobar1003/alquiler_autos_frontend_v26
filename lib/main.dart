@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(body: LoginScreen()),
       routes: {
         '/login': (context) => const LoginScreen(),
-        '/register': (context) => const Register(),
+        '/register': (context) => const register(),
       },
 
     );
